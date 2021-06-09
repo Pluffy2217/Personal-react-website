@@ -1,0 +1,115 @@
+.projectShowcase {
+    position: absolute;
+    top: 1.8em;
+    color: #333;
+    text-decoration: none;
+    font-size: 45px;
+    font-weight: 800;
+    display: inline-block;
+    cursor: pointer;
+}
+.projectShowcase:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #333;
+    transition: all 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.projectShowcase:hover:after { 
+    color: #333;
+    width: 100%; 
+    left: 0; 
+    cursor: pointer;
+}
+
+.slider{
+    position: relative;
+    top: 200px;
+    height: 110vh;
+    width: 98.9vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sliderImage{
+    position: absolute;
+    right: 0;
+    width: 490px;
+    height: 300px;
+    border-radius: 10px;
+}
+.right-arrow, .left-arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 3rem;
+    color: #000;
+    z-index: 5;
+    user-select: none;
+    cursor: pointer;
+}
+.right-arrow{
+    right: 32px;
+}
+.left-arrow{
+    left: 32px;
+}
+.slide{
+    position: relative;
+    opacity: 0;
+    transition-duration: 1s ease;
+}
+.slide.active{
+    position: relative;
+    opacity: 1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+}
+
+.innerdiv{
+    position: relative;
+    width: 800px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #faf3f3;
+}
+.innerdivTitle{
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    width: 280px;
+    font-size: 26px;
+    color: #333;
+    
+}
+.innerdivContent{
+    position: absolute;
+    font-size: 15px;
+    top: 110px;
+    left: 30px;
+    width: 250px;
+    color: #333;
+}
+.links{
+    position: absolute;
+    top: 75%;
+}
+.fa-lg{
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 960px) {
+
+    .projectShowcase{
+        font-size: 30px;
+    }
+    .slider{
+        display: none;
+    }
+}

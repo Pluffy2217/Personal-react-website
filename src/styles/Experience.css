@@ -1,0 +1,80 @@
+.experience{
+    position: relative;
+    top: 80px;
+}
+
+.experience > h3{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    margin-left: 150px;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-evenly;
+}
+.icon{
+    width: 80px;
+    height: 80px;
+}
+
+.node-icon,
+.react-icon,
+.next-icon,
+.mongo-icon {
+    position: relative;
+}
+
+.node-icon::before,.node-icon::after,
+.react-icon::before,.react-icon::after,
+.next-icon::before,.next-icon::after,
+.mongo-icon::before,.mongo-icon::after {
+    --scale: 0;
+    --tooltip-color: #333;
+    --arrow-size: 10px;
+
+    position: absolute;
+    top: -0.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));;
+    transition: 50ms transform;
+    transform-origin: bottom center;
+}
+.node-icon::before,.react-icon::before,.next-icon::before,.mongo-icon::before{
+    --translate-y: calc(-100% - var(--arrow-size));
+
+    content: attr(data-tooltip);
+    color: white;
+    padding: 0.5rem;
+    width: max-content;
+    background: var(--tooltip-color);
+    text-align: center;
+    border-radius: 3px;
+}
+.node-icon:hover::before,
+.node-icon:hover::after,
+.react-icon:hover::before,
+.react-icon:hover::after,
+.next-icon:hover::before,
+.next-icon:hover::after,
+.mongo-icon:hover::before,
+.mongo-icon:hover::after {
+    --scale: 1;
+}
+.node-icon::after,.react-icon::after,.next-icon::after,.mongo-icon::after{
+    --translate-y: calc(-1 * var(--arrow-size));
+
+    content: '';
+    border: var(--arrow-size) solid transparent;
+    border-top-color: var(--tooltip-color);
+    transform-origin: top center;
+}
+
+@media screen and (max-width: 960px) {
+
+    .icon{
+        height: 65px;
+        width: 65px;
+    }
+}
